@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curve Navbar</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .this {
+            background: #000;
+            background: url("batman.jpg") no-repeat center / cover;
+            font-family: tahoma, Arial, "Helvetica Neue", Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .this ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .this nav {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            height: 100vh;
+            background: #fff;
+            width: 100px;
+            padding-right: 40px;
+            padding-top: 150px;
+            border-radius: 0% 50% 350% 0%;
+            -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+        }
+
+        .this .nav-icon {
+            cursor: pointer;
+            width: 55px;
+            height: 41px;
+            /* background: rgba(161, 57, 57, 0.507); */
+            position: relative;
+            left: 35%;
+            /* top: 30%; */
+            -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+        }
+
+        .this .nav-icon .topbar,
+        .this .nav-icon .middlebar,
+        .this .nav-icon .bottombar {
+            width: 100%;
+            height: 3px;
+            background: #fc0363;
+            position: absolute;
+            top: 10px;
+            -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            ;
+        }
+
+        .this .nav-icon .topbar {
+            -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        }
+
+        .this .nav-icon .middlebar {
+            top: 20px;
+        }
+
+        .this .nav-icon .bottombar {
+            top: 30px;
+            width: 70%;
+        }
+
+        .this .nav {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 35px;
+            line-height: 1.6;
+            -webkit-transform: translateX(-350px);
+                -ms-transform: translateX(-350px);
+                    transform: translateX(-350px);
+            -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+            transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+        }
+
+        .this nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            -webkit-transition: .4s;
+            -o-transition: .4s;
+            transition: .4s;
+        }
+
+        .this nav a:hover {
+            color: rgb(3, 151, 165);
+        }
+
+        .this nav.active .nav-icon .topbar,
+        .this nav.active .nav-icon .bottombar {
+            -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+            top: 20px;
+            width: 100%;
+        }
+
+        .this nav.active .nav-icon .middlebar {
+            opacity: 0;
+            width: 0;
+        }
+
+        .this nav.active .nav-icon .bottombar {
+            -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+
+        .this nav.active {
+            width: 320px;
+            border-radius: 0% 1% 1% 0%;
+        }
+
+        .this nav.active .nav-icon {
+            left: 79%;
+        }
+
+        .this nav.active .nav {
+            -webkit-transform: translateX(0px);
+                -ms-transform: translateX(0px);
+                    transform: translateX(0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="this">
+        <nav>
+            <div class="nav-icon">
+                <div class="topbar"></div>
+                <div class="middlebar"></div>
+                <div class="bottombar"></div>
+            </div>
+            <ul class="nav">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">CLIENT</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body">
+        <div class="code">
+            <a href="https://github.com/sandipsaha597/curve-navbar" class="download">Download from github</a>
+            <div class="code-wrapper">
+                <h2>HTML</h2>
+                <code>
+                    <pre>
+&#x3C;nav&#x3E;
+    &#x3C;div class=&#x22;nav-icon&#x22;&#x3E;
+        &#x3C;div class=&#x22;topbar&#x22;&#x3E;&#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;middlebar&#x22;&#x3E;&#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;bottombar&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;ul class=&#x22;nav&#x22;&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HOME&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;GALLERY&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;TEAM&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CLIENT&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;FAQ&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+&#x3C;/nav&#x3E;
+                    </pre>
+                </code>
+            </div>
+            <div class="code-wrapper">
+                <h2>CSS</h2>
+                <code>
+                    <pre>
+body {
+    background: #000;
+    background: url("batman.jpg") no-repeat center / cover;
+    font-family: tahoma, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav {
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    height: 100vh;
+    background: #fff;
+    width: 100px;
+    padding-right: 40px;
+    padding-top: 150px;
+    border-radius: 0% 50% 350% 0%;
+    -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+.nav-icon {
+    cursor: pointer;
+    width: 55px;
+    height: 41px;
+    position: relative;
+    left: 35%;
+    -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+.nav-icon .topbar,
+.nav-icon .middlebar,
+.nav-icon .bottombar {
+    width: 100%;
+    height: 3px;
+    background: #fc0363;
+    position: absolute;
+    top: 10px;
+    -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+.nav-icon .topbar {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+
+.nav-icon .middlebar {
+    top: 20px;
+}
+
+.nav-icon .bottombar {
+    top: 30px;
+    width: 70%;
+}
+
+.nav {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 35px;
+    line-height: 1.6;
+    -webkit-transform: translateX(-350px);
+        -ms-transform: translateX(-350px);
+            transform: translateX(-350px);
+    -webkit-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    -o-transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+}
+
+nav a:hover {
+    color: rgb(3, 151, 165);
+}
+
+nav.active .nav-icon .topbar,
+nav.active .nav-icon .bottombar {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 20px;
+    width: 100%;
+}
+
+nav.active .nav-icon .middlebar {
+    opacity: 0;
+    width: 0;
+}
+
+nav.active .nav-icon .bottombar {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+nav.active {
+    width: 320px;
+    border-radius: 0% 1% 1% 0%;
+}
+
+nav.active .nav-icon {
+    left: 79%;
+}
+
+nav.active .nav {
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+}
+                    </pre>
+                </code>
+            </div>
+            <div class="code-wrapper">
+                <h2>JavaScript</h2>
+                <code>
+                    <pre>
+const nav = document.querySelector('nav')
+nav.onclick = () => nav.classList.toggle('active')
+                    </pre>
+                </code>
+            </div>
+        </div>
+
+        <div class="related">
+            <h2>Related</h2>
+            <ul class="list">
+                <li id="animated-border-bottom">
+                    <iframe src="https://sandipsaha597.github.io/animated-border-bottom/">
+                    <p>Your browser does not support iframes.</p>
+                    </iframe>
+                    <a href="animated-border-bottom.html" class="see-code">See Code</a>
+                </li>
+                <li id="button-ripple-effect">
+                    <iframe src="https://sandipsaha597.github.io/button-with-ripple-effect/">
+                    <p>Your browser does not support iframes.</p>
+                    </iframe>
+                    <a href="button-ripple-onclick.html" class="see-code">See Code</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const nav = document.querySelector('nav')
+        nav.onclick = () => nav.classList.toggle('active')
+    </script>
+</body>
+
+</html>

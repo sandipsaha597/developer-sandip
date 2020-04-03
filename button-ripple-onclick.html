@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Button Ripple effect on click</title>
+    <style>
+        body {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .sandip-btn {
+            background: -webkit-gradient(linear, left top, right top, from(#0162c8), to(#55e7fc));
+            background: -o-linear-gradient(left, #0162c8, #55e7fc);
+            background: linear-gradient(90deg, #0162c8, #55e7fc);
+            border: none;
+            border-radius: 40px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 12px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sandip-btn:focus {
+            outline: none;
+        }
+
+        .sandip-btn span {
+            position: absolute;
+            background: #fff;
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            -webkit-animation: animate 1s linear 1;
+                    animation: animate 1s linear 1;
+            width: 0;
+            height: 0;
+        }
+
+        @-webkit-keyframes animate {
+            0% {
+                opacity: 0.6;
+            }
+
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0.6;
+            }
+
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="sandip-btn">CLICK</button>
+
+    <div class="body">
+        <div class="code">
+            <a href="https://github.com/sandipsaha597/button-with-ripple-effect" class="download">Download from github</a>
+            <div class="code-wrapper">
+                <h2>HTML</h2>
+                <code>
+                    <pre>
+&#x3C;button class=&#x22;sandip-btn&#x22;&#x3E;CLICK&#x3C;/button&#x3E;
+                    </pre>
+                </code>
+            </div>
+            <div class="code-wrapper">
+                <h2>CSS</h2>
+                <code>
+                    <pre>
+body {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.sandip-btn {
+    background: -webkit-gradient(linear, left top, right top, from(#0162c8), to(#55e7fc));
+    background: -o-linear-gradient(left, #0162c8, #55e7fc);
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sandip-btn:focus {
+    outline: none;
+}
+
+.sandip-btn span {
+    position: absolute;
+    background: #fff;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-animation: animate 1s linear 1;
+            animation: animate 1s linear 1;
+    width: 0;
+    height: 0;
+}
+
+@-webkit-keyframes animate {
+    0% {
+        opacity: 0.6;
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0.6;
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+                    </pre>
+                </code>
+            </div>
+            <div class="code-wrapper">
+                <h2>JavaScript</h2>
+                <code>
+                    <pre>
+const btn = document.querySelector('.sandip-btn')
+
+btn.onclick = (e) => {
+    let x = e.clientX - e.target.getBoundingClientRect().top,
+    y = e.clientY - e.target.getBoundingClientRect().left
+    
+    let ripples = document.createElement('span');
+    btn.appendChild(ripples)
+    ripples.style.left = x + "px";
+    ripples.style.top = y + "px";
+
+    setTimeout(() => {
+    ripples.remove()
+    }, 5000);
+}
+                    </pre>
+                </code>
+            </div>
+        </div>
+
+        <div class="related">
+            <h2>Related</h2>
+            <ul class="list">
+                <li class="wrapper" id="curve-navbar"> 
+                    <iframe src="https://sandipsaha597.github.io/curve-navbar/">
+                    <p>Your browser does not support iframes.</p>
+                    </iframe>
+                    <a href="curve-navbar.html" class="see-code">See Code</a>
+                </li>
+                <li id="animated-border-bottom">
+                    <iframe src="https://sandipsaha597.github.io/animated-border-bottom/">
+                    <p>Your browser does not support iframes.</p>
+                    </iframe>
+                    <a href="animated-border-bottom.html" class="see-code">See Code</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.sandip-btn')
+
+        btn.onclick = (e) => {
+            let x = e.clientX - e.target.getBoundingClientRect().top,
+                y = e.clientY - e.target.getBoundingClientRect().left
+
+            let ripples = document.createElement('span');
+            btn.appendChild(ripples)
+            ripples.style.left = x + "px";
+            ripples.style.top = y + "px";
+
+            setTimeout(() => {
+                ripples.remove()
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
