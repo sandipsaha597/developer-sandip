@@ -8,6 +8,13 @@ body {
     margin: 10px;
     padding-bottom: 20px;
 }
+h1 {
+    background: #2980b9;
+    padding: 20px 28px;
+}
+h1 a {
+    color: #ffffff;
+}
 ul {
     list-style: none;
     padding: 0;
