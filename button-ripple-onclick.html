@@ -158,8 +158,8 @@ body {
 const btn = document.querySelector('.sandip-btn')
 
 btn.onclick = (e) => {
-    let x = e.clientX - e.target.getBoundingClientRect().top,
-    y = e.clientY - e.target.getBoundingClientRect().left
+    let x = e.clientX - e.target.getBoundingClientRect().left,
+    y = e.clientY - e.target.getBoundingClientRect().top
     
     let ripples = document.createElement('span');
     btn.appendChild(ripples)
